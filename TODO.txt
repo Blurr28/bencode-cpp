@@ -1,1 +1,1 @@
-implement bencoding
+implement bencoding for byte strings, integers, lists, and dictionaries
