@@ -1,4 +1,4 @@
-#include "../include/BencodeDecoder.hpp"
+#include "../include/bencode_decoder.hpp"
 
 namespace bencode {
 

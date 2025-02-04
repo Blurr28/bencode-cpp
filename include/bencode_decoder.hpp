@@ -1,7 +1,7 @@
 #ifndef BENCODE_DECODER_H
 #define BENCODE_DECODER_H
 
-#include "BencodeType.hpp"
+#include "bencode_type.hpp"
 #include <stdexcept>
 #include <sstream>
 
