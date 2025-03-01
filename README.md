@@ -54,7 +54,7 @@ int main() {
 - Boost C++ Libraries
 
 ## License
-This project is licensed under the GPL.
+This project is licensed under the GPL-3.0.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
