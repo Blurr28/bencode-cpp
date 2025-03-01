@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cassert>
-#include "../include/BencodeDecoder.hpp"
+#include "../include/bencode_decoder.hpp"
 
 void testBencodeDecoder(){
     using namespace bencode;

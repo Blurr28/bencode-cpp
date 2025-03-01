@@ -1,13 +1,31 @@
+# Compiler
 CXX = g++
-CXXFLAGS = --std=c++17 -Iinclude -Wall
-SRC = src/BencodeDecoder.cpp
-TEST_SRC = test/testBencodeDecoder.cpp
-TARGET = test_bencode
+CXXFLAGS = -std=c++17 -Wall -Wextra -Iinclude
+
+# Source Files
+SRC = src/bencode_decoder.cpp src/bencode_encoder.cpp
+TEST_SRC = test/test_bencode_encoder.cpp
+
+# Object Files
+OBJ = $(SRC:.cpp=.o) $(TEST_SRC:.cpp=.o)
+
+# Target
+TARGET = bencode_test
 
 all: $(TARGET)
 
-$(TARGET): $(Src) $(TEST_SRC)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC) $(TEST_SRC) -lboost_system
+# Build Object Files
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+# Link the executable
+$(TARGET): $(OBJ)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(TARGET) -lboost_system
+
+# Clean Build Files
 clean:
-	rm -f $(TARGET)
+	rm -f $(OBJ) $(TARGET)
+
+# Run Tests
+test: all
+	./$(TARGET)
